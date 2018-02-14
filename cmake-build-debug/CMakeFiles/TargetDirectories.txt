@@ -1,0 +1,3 @@
+/home/mathbot/CLionProjects/cosc2430/gw4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mathbot/CLionProjects/cosc2430/gw4/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mathbot/CLionProjects/cosc2430/gw4/cmake-build-debug/CMakeFiles/gw4.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/gw4.dir/main.cpp.o CMakeFiles/gw4.dir/benchPlayer.cpp.o CMakeFiles/gw4.dir/courtPlayer.cpp.o CMakeFiles/gw4.dir/Player.cpp.o CMakeFiles/gw4.dir/node.cpp.o  -o gw4 
