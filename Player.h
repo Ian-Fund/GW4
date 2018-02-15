@@ -20,7 +20,6 @@ public:
     void setAge(int age);
     int getNumber();
     void setNumber(int number);
-protected:
     int number;
     int age;
 

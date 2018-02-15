@@ -6,13 +6,24 @@
 #define GW4_COURTPLAYER_H
 
 #include "Player.h"
+#include "node.h"
 #include <stdio.h>
 #include <iostream>
 
 
 //circular list?
-class courtPlayer : protected Player{
+class courtPlayer : public Player{
+public:
+    node *head;
+    node *tail;
     string status;
+    void addPlayer(node *player);
+    void removePlayer(node *player); // previous/next on removed players might use Player *player instead
+    node *search(int age);
+    node *findOldest();
+    float findTime(node *oldest);
+    void addTime(float time);
+
 
 };
 
