@@ -12,7 +12,6 @@ public:
     Player player;
     node *next;
     node *previous;
-    //node();
     node(int age, int number);
     ~node();
 

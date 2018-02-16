@@ -7,11 +7,13 @@
 
 
 node::node(int age, int number){
-    Player(age, number);
+    player.setAge(age);
+    player.setNumber(number);
     status = 'B';
     next = 0;
-    previous = 0;
+    previous = 0; // these don't seem right? or is it right becacuse it's not in a list yet?
 }
+
 node::~node(){
     delete  next, previous;
 }

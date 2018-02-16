@@ -11,10 +11,13 @@
 #include "node.h"
 
 class benchPlayer  {
-    node *head;
-    node *tail;
+public:
+    node *head=0;
+    node *tail=0;
     void addPlayer(node *player, bool something);
     node *removePlayer(bool something);
+    void fillBench(node *player);
+    void print();
 
 
 

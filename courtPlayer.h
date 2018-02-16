@@ -11,18 +11,17 @@
 #include <iostream>
 
 
-//circular list?
 class courtPlayer : public Player{
 public:
-    node *head;
-    node *tail;
+    node *head=0;
+    node *tail=0;
     string status;
     void addPlayer(node *player);
-    void removePlayer(node *player); // previous/next on removed players might use Player *player instead
-    node *search(int age);
+    node *removePlayer(node *player); // previous/next on removed players might use Player *player instead
     node *findOldest();
     float findTime(node *oldest);
     void addTime(float time);
+    void print();
 
 
 };
