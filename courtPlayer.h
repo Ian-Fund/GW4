@@ -17,6 +17,7 @@ public:
     node *tail=0;
     string status;
     void addPlayer(node *player);
+    void sort_playernumber(int PlayerNumber);
     node *removePlayer(node *player); // previous/next on removed players might use Player *player instead
     node *findOldest();
     float findTime(node *oldest);

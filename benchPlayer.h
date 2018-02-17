@@ -14,9 +14,10 @@ class benchPlayer  {
 public:
     node *head=0;
     node *tail=0;
-    void addPlayer(node *player, bool something);
+    void addPlayer(node *player);
     node *removePlayer(bool something);
     void fillBench(node *player);
+    node *deletePlayer();
     void print();
 
 

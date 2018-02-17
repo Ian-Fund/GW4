@@ -35,51 +35,58 @@ int main() {
     }
     //bench.print();
     for (int j = 0; j < 5; ++j) {
-        court.addPlayer(bench.removePlayer(true));
+        court.addPlayer(bench.deletePlayer());
+
 
     }
-    cout<<endl;
-    court.print();
+//    cout<<endl;
+//    court.print();
     node *oldest =court.findOldest();
+    //cout<<oldest->player.age<<endl;
     float oldestTime = court.findTime(oldest);
-    cout<<oldestTime;
+    //cout<<oldestTime;
 
     node *beingRemovedFromCourt;
     bool something = true;
     while(totalTime < 48) {
         if (oldestTime > 48 - totalTime) {
-            cout<< 48-totalTime<<endl;
+           // cout<< 48-totalTime<<endl;
             court.addTime(48 - totalTime);
             totalTime += 48 - totalTime;
         }
         else {
             totalTime += oldestTime;
             court.addTime(oldestTime);
+            cout<<"this works"<<endl;
             beingRemovedFromCourt = court.removePlayer(oldest);
-            cout<<court.removePlayer(oldest)->player.age;
-            court.addPlayer(bench.removePlayer(something));
-            bench.addPlayer(beingRemovedFromCourt,something);
+            //cout<<(beingRemovedFromCourt)->player.age;
+            court.addPlayer(bench.deletePlayer());
+            court.print();cout<<endl;
+            bench.addPlayer(beingRemovedFromCourt);
+            bench.print();
             something = !something;
+           // cout<<boolalpha<<something<<endl;
         }
-
-        node *oldest = court.findOldest();
-        oldestTime = court.findTime(oldest);
+//
+//        node *oldest = court.findOldest();
+//        oldestTime = court.findTime(oldest);
     }
 
-//    for (int k = 0; k < 5; ++k) {
-//        node *oldest = court.findOldest();
-//        bench.addPlayer(court.removePlayer(oldest),something);
-//
-//    }
-  //  node *end = bench.head;
-//    for (int l = 0; l < 12; ++l) {
-//        lockerRoom[l] = end->player;
-//        end = end->next;
-//    }
-//    minutes_sort(lockerRoom);
-//    print_minutes(lockerRoom);
-    //print age
-    //sort number
+    for (int k = 0; k < 5; ++k) {
+        node *oldest = court.findOldest();
+        bench.addPlayer(court.removePlayer(oldest));
+
+    }
+    node *end = bench.head;
+    for (int l = 0; l < 12; ++l) {
+        lockerRoom[l] = end->player;
+        end = end->next;
+    }
+    minutes_sort(lockerRoom);
+    print_minutes(lockerRoom);
+    age_sort(lockerRoom);
+    print_minutes(lockerRoom);
+    //sort number;
     //print number
     //print all
     return 0;

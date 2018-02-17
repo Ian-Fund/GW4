@@ -24,26 +24,81 @@ void courtPlayer::addPlayer(node *player) {
     if(head==0){
         head = temp;
         temp->next = head;
+        temp->previous = head;
         return;
     }
-    node* cur = head;
-    if(temp->player.number < head->player.number){
-        temp->next  = head;
-        while(cur->next!=head){
-            cur = cur->next;
+    else {
+        node* cu=head;
+        while(cu->next != head) {
+            cu = cu->next;
         }
-        cur->next = temp;
-        head = temp;
-        return;
+        cu->next = temp;
+        temp->next = head;
+        head->previous = temp;
+        temp->previous = cu;
     }
-    while(temp->player.number > cur->player.number && cur->next!=head){
-        cur = cur->next; // pointing to the next one
-    }
-    temp->next = cur->next;
-    cur->next = temp;
+}
 
+    //sort here
+    //selection sort for player number
+
+void courtPlayer::sort_playernumber(int PlayerNumber) {
+    int temp;
+    node *previous, *cu;
+    //*q and *r//cu = current
+    previous = head;
+    for (int i = 0; i < PlayerNumber - 1; i++) {
+        cu = previous;
+        for (int j = i + 1; j < PlayerNumber; j++) {
+            if (previous->player.number > cu->player.number) {
+                //need to define these in player.cpp = head.getNumber, head.getNumber
+                temp = previous->player.number;
+                previous->player.number = cu->player.number;
+                cu->player.number = temp; }
+            cu = cu->next; }
+        previous= previous->next;
+    }
 
 }
+
+//    node* cur = head;
+//    node* last = head;
+//    if(temp->player.number < head->player.number){
+//        temp->next  = head;
+//        temp->previous = head->previous;
+//        head->previous = temp;
+//        head = temp;
+////        while(cur->next!=head){
+////            cur = cur->next;
+////        }
+////        cur->next = temp;
+////        head = temp;
+//        return;
+//    }
+//    else {
+//        cur = cur->next;
+//        while (temp->player.number > cur->player.number && cur->next != head) {
+//            cur = cur->next; // pointing to the next one
+//        }
+//
+//        if(temp->player.number < cur->player.number) {
+//            temp->next=cur;
+//            temp->previous = cur->previous;
+//            cur->previous->next = temp;
+//            cur->previous = temp;
+//        }
+//        if(cur->next == head) {
+//            temp->next = cur->next;
+//            temp->previous = cur;
+//            cur->next = temp;
+//            head->previous = temp;
+//        }
+
+//        temp->next = cur;
+//        last->next = temp;
+
+
+
 
 node* courtPlayer::findOldest() {
     node *cu = head;
